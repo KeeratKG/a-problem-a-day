@@ -57,6 +57,25 @@ class Solution:
 
 
         return curL 
+    
+    # most optimal approach, cleanest code 
+        if A==None or B == None: 
+            return None 
+
+        a, b = A, B # dummy nodes 
+
+        while a!=b:
+            if a is None: 
+                a = B 
+            else: 
+                a = a.next 
+
+            if b is None: 
+                b = A 
+            else: 
+                b = b.next 
+
+        return a
 
 
 
