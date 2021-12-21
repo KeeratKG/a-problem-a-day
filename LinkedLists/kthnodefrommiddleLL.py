@@ -69,3 +69,29 @@ class Solution:
 
         else:
             return -1 
+        
+    # most obvious solution 
+    # we need to print the n/2+1-B th element 
+    def FindLength(self, A):
+        # length of linked list 
+        length = 0 
+        current = A 
+        while current:
+            current = current.next 
+            length += 1
+        return length 
+
+    def solve(self, A, B):
+        soln = Solution()
+        length = soln.FindLength(A)
+        reqd_node = length//2 + 1 - B 
+        if reqd_node <= 0:
+            return -1 
+        else: 
+            i = 0 
+            current = A
+            while i<reqd_node-1:
+                i += 1 
+                current = current.next 
+
+            return current.val 
